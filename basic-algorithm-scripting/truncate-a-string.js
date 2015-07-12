@@ -3,7 +3,7 @@
 function truncate(str, num) {
   var arr = str.split('');
   newArr = [];
-  if (arr.length < num + 3 || arr.length == num) {
+  if (arr.length < num + 3 || arr.length === num) {
       return str;
   } else {
     for (var i = 0; i <= num - 3; i++) {
