@@ -23,14 +23,17 @@ var quotes = [
 	{quote: "Once you start down the dark path, forever will it dominate your destiny.", character: "Yoda"}
 ];
 
-function generateQuote(){
-	randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+function generateQuote() {
+	var randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
 	$('.quote').text(randomQuote.quote);
 	$('.character').text(randomQuote.character);
+	var said = randomQuote.quote.split(' ').join('%20');
+	var speaker = randomQuote.character.split(' ').join('%20');
 }
 
 $(document).ready(function() {
-	$('.btn').on('click', function() {
+	$('.btn-force').on('click', function() {
 		generateQuote();
+		$('.twitter').attr('href', 'https://twitter.com/intent/tweet?text=' + speaker + '%20said,%20"' + said + '"%20%23StarWars%20https://goo.gl/MOxWg1');
 	});
 });
