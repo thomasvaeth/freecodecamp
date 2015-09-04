@@ -24,11 +24,11 @@ var quotes = [
 ];
 
 function generateQuote() {
-	var randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+	randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
 	$('.quote').text(randomQuote.quote);
 	$('.character').text(randomQuote.character);
-	var said = randomQuote.quote.split(' ').join('%20');
-	var speaker = randomQuote.character.split(' ').join('%20');
+	said = randomQuote.quote.split(' ').join('%20');
+	speaker = randomQuote.character.split(' ').join('%20');
 }
 
 $(document).ready(function() {
