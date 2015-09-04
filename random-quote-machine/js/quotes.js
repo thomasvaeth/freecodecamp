@@ -32,8 +32,10 @@ function generateQuote() {
 }
 
 $(document).ready(function() {
+	$('.btn-tweet').hide();
 	$('.btn-force').on('click', function() {
 		generateQuote();
 		$('.twitter').attr('href', 'https://twitter.com/intent/tweet?text=' + speaker + '%20said,%20"' + said + '"%20%23StarWars%20https://goo.gl/MOxWg1');
+		$('.btn-tweet').show();
 	});
 });
