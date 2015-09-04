@@ -25,20 +25,27 @@ var quotes = [
 
 function generateQuote() {
 	randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-	if (randomQuote.quote.length + randomQuote.character.length > 97) {
+	if (randomQuote.character === "C-3PO" && randomQuote.quote.length + randomQuote.character.length > 95) {
 		generateQuote();
+	} else if (randomQuote.quote.length + randomQuote.character.length > 97) {
+		generateQuote();
+	} else {
+		$('.quote').text(randomQuote.quote);
+		$('.character').text(randomQuote.character);
+		said = randomQuote.quote.split(' ').join('%20');
+		speaker = randomQuote.character.split(' ').join('%20');
 	}
-	$('.quote').text(randomQuote.quote);
-	$('.character').text(randomQuote.character);
-	said = randomQuote.quote.split(' ').join('%20');
-	speaker = randomQuote.character.split(' ').join('%20');
 }
 
 $(document).ready(function() {
 	$('.btn-tweet').hide();
 	$('.btn-force').on('click', function() {
 		generateQuote();
-		$('.twitter').attr('href', 'https://twitter.com/intent/tweet?text=' + speaker + '%20said,%20"' + said + '"%20%23StarWars%20https://goo.gl/MOxWg1');
+		if (speaker === 'C-3PO') {
+			$('.twitter').attr('href', 'https://twitter.com/intent/tweet?text=%23C-3PO%20said,%20"' + said + '"%20%23StarWars%20https://goo.gl/MOxWg1');
+		} else {
+			$('.twitter').attr('href', 'https://twitter.com/intent/tweet?text=' + speaker + '%20said,%20"' + said + '"%20%23StarWars%20https://goo.gl/MOxWg1');
+		}
 		$('.btn-tweet').show();
 	});
 });
