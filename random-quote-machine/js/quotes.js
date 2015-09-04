@@ -25,6 +25,9 @@ var quotes = [
 
 function generateQuote() {
 	randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+	if (randomQuote.quote.length + randomQuote.character.length > 97) {
+		generateQuote();
+	}
 	$('.quote').text(randomQuote.quote);
 	$('.character').text(randomQuote.character);
 	said = randomQuote.quote.split(' ').join('%20');
