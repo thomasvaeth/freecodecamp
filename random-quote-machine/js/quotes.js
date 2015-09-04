@@ -30,7 +30,6 @@ function generateQuote(){
 }
 
 $(document).ready(function() {
-	generateQuote();
 	$('.btn').on('click', function() {
 		generateQuote();
 	});
