@@ -11,7 +11,9 @@ $.getJSON('http://ip-api.com/json', function(ipAddress) {
     var backgroundPic = forecast.weather[0].main.toLowerCase();
 
     $(document).ready(function() {
-      if (backgroundPic === 'clouds') {
+      if (backgroundPic === 'clear') {
+        $('body').css('background-image', 'url("images/clear.jpg")');
+      } else if (backgroundPic === 'clouds') {
         $('body').css('background-image', 'url("images/clear.jpg")');
       } else if (backgroundPic === 'drizzle') {
         $('body').css('background-image', 'url("images/drizzle.jpg")');
