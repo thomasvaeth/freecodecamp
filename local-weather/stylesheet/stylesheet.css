@@ -21,7 +21,6 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-image: url("../images/space.jpg");
   background-size: cover;
   background-color: #333;
 }
