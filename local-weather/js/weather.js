@@ -8,22 +8,22 @@ $.getJSON('http://ip-api.com/json', function(ipAddress) {
   $.getJSON('http://api.openweathermap.org/data/2.5/weather?lat=' + ipAddress.lat + '&lon=' + ipAddress.lon, function(forecast) {
     var celsius = forecast.main.temp - 273.15;
     var fahrenheit = celsius * 1.8 + 32;
-    var backgroundPic = forecast.weather[0].main.toLowerCase();
+    var backgroundPic = forecast.weather[0].icon.substring(0, 2);
 
     $(document).ready(function() {
-      if (backgroundPic === 'clear') {
+      if (backgroundPic === '01' || backgroundPic === '02' || backgroundPic === '03') {
         $('body').css('background-image', 'url("images/clear.jpg")');
-      } else if (backgroundPic === 'clouds') {
-        $('body').css('background-image', 'url("images/clear.jpg")');
-      } else if (backgroundPic === 'drizzle') {
+      } else if (backgroundPic === '04') {
+        $('body').css('background-image', 'url("images/broken.jpg")');
+      } else if (backgroundPic === '09') {
         $('body').css('background-image', 'url("images/drizzle.jpg")');
-      } else if (backgroundPic === 'rain') {
+      } else if (backgroundPic === '10') {
         $('body').css('background-image', 'url("images/rain.jpg")');
-      } else if (backgroundPic === 'thunderstorm') {
+      } else if (backgroundPic === '11') {
         $('body').css('background-image', 'url("images/thunder.jpg")');
-      } else if (backgroundPic === 'snow') {
+      } else if (backgroundPic === '13') {
         $('body').css('background-image', 'url("images/snow.jpg")');
-      } else if (backgroundPic === 'atmosphere') {
+      } else if (backgroundPic === '50') {
         $('body').css('background-image', 'url("images/fog.jpg")');
       } else {
         $('body').css('background-image', 'url("images/def.jpg")');
