@@ -5,16 +5,12 @@ var clock = ':00';
 $(document).ready(function() {
 	$('.task').html(taskTimer + clock);
 	$('.break').html(breakTimer + clock);
-	$('.break, .stop, .reset, .set-break, .add-break, .subtract-break').hide();
+	$('.break, .start, .stop, .reset, .set-break, .add-break, .subtract-break').hide();
 });
 
 $('.set-task').on('click', function() {
 	$('.task, .set-task, .add-task, .subtract-task').hide();
 	$('.break, .set-break, .add-break, .subtract-break').show();
-});
-
-$('.stop').on('click', function () {
-	$('.stop').text('Start');
 });
 
 $('.add-task').on('click', function() {
@@ -47,4 +43,23 @@ $('.subtract-break').on('click', function() {
 		$('.set-break, .subtract-break').attr('disabled', 'disabled')
 	}
 	$('.break').html(breakTimer + clock);
+});
+
+$('.set-break').on('click', function() {
+	$('.break, .set-break, .add-break, .subtract-break').hide();
+	$('.start, .task').show();
+});
+
+$('.start').on('click', function() {
+	$('.start').hide();
+	$('.stop').show();
+});
+
+$('.stop').on('click', function() {
+	$('.stop').hide();
+	taskTimer = 25;
+	breakTimer = 5;
+	$('.task').html(taskTimer + clock);
+	$('.break').html(breakTimer + clock);
+	$('.task, .set-task, .add-task, .subtract-task').show();
 });
