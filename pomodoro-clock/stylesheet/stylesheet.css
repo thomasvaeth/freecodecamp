@@ -1,0 +1,95 @@
+.add,
+.subtract {
+  margin-top: 5px;
+}
+
+a,
+a:focus,
+a:hover {
+  color: #fff;
+}
+
+.btn-default,
+.btn-default:hover,
+.btn-default:focus {
+  color: #333;
+  text-shadow: none;
+  background-color: #fff;
+  border: 1px solid #fff;
+}
+
+.timer {
+  font-size: 144px;
+  font-weight: 600;
+}
+
+html,
+body {
+  height: 100%;
+  background-image: url("../images/clock.jpg");
+  background-size: cover;
+  background-color: #333;
+}
+
+body {
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+}
+
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.cover-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.inner {
+  padding: 30px;
+}
+
+.cover {
+  padding: 0 20px;
+}
+.cover .btn-lg {
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+.mastfoot {
+  color: #999;
+  color: rgba(255,255,255,.5);
+}
+
+@media (min-width: 768px) {
+  .mastfoot {
+    position: fixed;
+    bottom: 0;
+  }
+  .site-wrapper-inner {
+    vertical-align: middle;
+  }
+  .mastfoot,
+  .cover-container {
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .mastfoot,
+  .cover-container {
+    width: 700px;
+  }
+}
