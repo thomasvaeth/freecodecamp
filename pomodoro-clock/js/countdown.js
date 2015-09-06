@@ -1,29 +1,50 @@
-var timer = 25;
+var taskTimer = 25;
+var breakTimer = 5;
+var clock = ':00';
 
 $(document).ready(function() {
-	$('.timer').html(timer);
-	$('.stop').hide();
-	$('.reset').hide();
+	$('.task').html(taskTimer + clock);
+	$('.break').html(breakTimer + clock);
+	$('.break, .stop, .reset, .set-break, .add-break, .subtract-break').hide();
 });
 
-$('.start').on('click', function() {
-	$('.start').hide();
-	$('.add').hide();
-	$('.subtract').hide();
-	$('.stop').show();
-	$('.reset').show();
+$('.set-task').on('click', function() {
+	$('.task, .set-task, .add-task, .subtract-task').hide();
+	$('.break, .set-break, .add-break, .subtract-break').show();
 });
 
 $('.stop').on('click', function () {
 	$('.stop').text('Start');
 });
 
-$('.add').on('click', function() {
-	timer++;
-	$('.timer').html(timer);
+$('.add-task').on('click', function() {
+	taskTimer++;
+	if (taskTimer > 0) {
+		$('.set-task, .subtract-task').removeAttr('disabled');
+	}
+	$('.task').html(taskTimer + clock);
 });
 
-$('.subtract').on('click', function() {
-	timer--;
-	$('.timer').html(timer);
+$('.subtract-task').on('click', function() {
+	taskTimer--;
+	if (taskTimer === 0) {
+		$('.set-task, .subtract-task').attr('disabled', 'disabled');
+	}
+	$('.task').html(taskTimer + clock);
+});
+
+$('.add-break').on('click', function() {
+	breakTimer++;
+	if (breakTimer > 0) {
+		$('.set-break, .subtract-break').removeAttr('disabled');
+	}
+	$('.break').html(breakTimer + clock);
+});
+
+$('.subtract-break').on('click', function() {
+	breakTimer--;
+	if (breakTimer === 0) {
+		$('.set-break, .subtract-break').attr('disabled', 'disabled')
+	}
+	$('.break').html(breakTimer + clock);
 });

@@ -1,5 +1,7 @@
-.add,
-.subtract {
+.add-task,
+.subtract-task,
+.add-break,
+.subtract-break {
   margin-top: 5px;
 }
 
@@ -18,7 +20,8 @@ a:hover {
   border: 1px solid #fff;
 }
 
-.timer {
+.task,
+.break {
   font-size: 144px;
   font-weight: 600;
 }
