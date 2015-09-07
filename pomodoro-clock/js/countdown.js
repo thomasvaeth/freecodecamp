@@ -1,12 +1,12 @@
-var taskTimer = 25;
-var breakTimer = 5;
-var clock = ':00';
-
 $(document).ready(function() {
 	$('.task').html(taskTimer + clock);
 	$('.break').html(breakTimer + clock);
 	$('.break, .start, .stop, .reset, .set-break, .add-break, .subtract-break').hide();
 });
+
+var taskTimer = 25;
+var breakTimer = 5;
+var clock = ':00';
 
 $('.set-task').on('click', function() {
 	$('.task, .set-task, .add-task, .subtract-task').hide();
@@ -47,19 +47,56 @@ $('.subtract-break').on('click', function() {
 
 $('.set-break').on('click', function() {
 	$('.break, .set-break, .add-break, .subtract-break').hide();
-	$('.start, .task').show();
+	$('.start, .clock').show();
 });
 
+var minutesLeft = taskTimer;
+var secondsLeft = 0;
+var timeSetup;
+
+function countdownClock() {
+  secondsLeft--;
+  if (minutesLeft < 10 && secondsLeft < 10) {
+    $('.clock').html('0' + minutesLeft + ':0' + secondsLeft);
+  } else if (minutesLeft < 10) {
+    $('.clock').html('0' + minutesLeft + ':' + secondsLeft);
+  } else if (secondsLeft < 10) {
+    $('.clock').html(minutesLeft + ':0' + secondsLeft);
+  } else {
+    $('.clock').html(minutesLeft + ':' + secondsLeft);
+  }
+  if (secondsLeft < 0) {
+    if (minutesLeft === 0 && secondsLeft < 0) {
+      clearInterval(timeSetup);
+      $('.clock').html('00:00');
+    } else {
+      minutesLeft--;
+      secondsLeft = 60;
+      countdownClock();
+    }
+  }
+}
+
 $('.start').on('click', function() {
+	minutesLeft = taskTimer;
+	secondsLeft = 0;
+	timeSetup;
 	$('.start').hide();
 	$('.stop').show();
+	timeSetup = setInterval( function() {countdownClock()}, 1000);
+	countdownClock();
 });
 
 $('.stop').on('click', function() {
-	$('.stop').hide();
-	taskTimer = 25;
-	breakTimer = 5;
-	$('.task').html(taskTimer + clock);
-	$('.break').html(breakTimer + clock);
-	$('.task, .set-task, .add-task, .subtract-task').show();
+  $('.stop').hide();
+  $('.task').html(taskTimer + clock);
+  $('.break').html(breakTimer + clock);
+  $('.task, .set-task, .add-task, .subtract-task').show();
+  $('.clock').hide();
+  clearInterval(timeSetup);
+  taskTimer;
+  breakTimer;
+  minutesLeft = taskTimer;
+  secondsLeft = 0;
+  $('.clock').html('');
 });
