@@ -70,10 +70,7 @@ var minutesLeft;
 var secondsLeft = 0;
 var timeSetup;
 
-function taskClock() {
-  $('.clock, .information').css('color', 'white');
-  $('.information').text('Left in Task');
-  $('.information').show();
+function sharedClock() { 
   secondsLeft--;
   if (minutesLeft < 10 && secondsLeft < 10) {
     $('.clock').html('0' + minutesLeft + ':0' + secondsLeft);
@@ -85,8 +82,15 @@ function taskClock() {
     $('.clock').html(minutesLeft + ':' + secondsLeft);
   }
   if (minutesLeft <= 1 && secondsLeft === 0 || minutesLeft < 1) {
-  	$('.clock, .information').css('color', 'red');
+    $('.clock, .information').css('color', 'red');
   }
+}
+
+function taskClock() {
+  $('.clock, .information').css('color', 'white');
+  $('.information').text('Left in Task');
+  $('.information').show();
+  sharedClock();
   if (secondsLeft < 0) {
     if (minutesLeft === 0 && secondsLeft < 0) {
       taskTimer = 0;
@@ -106,19 +110,7 @@ function breakClock() {
   $('.clock, .information').css('color', 'white');
   $('.information').text('Left in Break');
   $('.information').show();
-  secondsLeft--;
-  if (minutesLeft < 10 && secondsLeft < 10) {
-    $('.clock').html('0' + minutesLeft + ':0' + secondsLeft);
-  } else if (minutesLeft < 10) {
-    $('.clock').html('0' + minutesLeft + ':' + secondsLeft);
-  } else if (secondsLeft < 10) {
-    $('.clock').html(minutesLeft + ':0' + secondsLeft);
-  } else {
-    $('.clock').html(minutesLeft + ':' + secondsLeft);
-  }
-  if (minutesLeft <= 1 && secondsLeft === 0 || minutesLeft < 1) {
-  	$('.clock, .information').css('color', 'red');
-  }
+  sharedClock();
   if (secondsLeft < 0) {
     if (minutesLeft === 0 && secondsLeft < 0) {
       taskTimer = 0;
