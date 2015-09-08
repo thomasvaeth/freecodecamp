@@ -1,7 +1,7 @@
 $(document).ready(function() {
   $('.task').html(taskTimer + clock);
   $('.break').html('0' + breakTimer + clock);
-  $('.break, .start-task, .start-break, .stop, .reset, .set-break, .add-break, .subtract-break').hide();
+  $('.break, .start-task, .start-break, .stop, .reset, .set-break, .add-break, .subtract-break, .information').hide();
 });
 
 var taskTimer = 25;
@@ -73,6 +73,7 @@ var timeSetup;
 function taskClock() {
   $('.clock, .information').css('color', 'white');
   $('.information').text('Left in Task');
+  $('.information').show();
   secondsLeft--;
   if (minutesLeft < 10 && secondsLeft < 10) {
     $('.clock').html('0' + minutesLeft + ':0' + secondsLeft);
@@ -83,7 +84,7 @@ function taskClock() {
   } else {
     $('.clock').html(minutesLeft + ':' + secondsLeft);
   }
-  if (minutesLeft < 1) {
+  if (minutesLeft <= 1 && secondsLeft === 0 || minutesLeft < 1) {
   	$('.clock, .information').css('color', 'red');
   }
   if (secondsLeft < 0) {
@@ -91,7 +92,7 @@ function taskClock() {
       taskTimer = 0;
       clearInterval(timeSetup);
       $('.clock').html('00:00');
-      $('.stop').hide();
+      $('.stop, .information').hide();
       $('.start-break').show();
     } else {
       minutesLeft--;
@@ -104,6 +105,7 @@ function taskClock() {
 function breakClock() {
   $('.clock, .information').css('color', 'white');
   $('.information').text('Left in Break');
+  $('.information').show();
   secondsLeft--;
   if (minutesLeft < 10 && secondsLeft < 10) {
     $('.clock').html('0' + minutesLeft + ':0' + secondsLeft);
@@ -114,7 +116,7 @@ function breakClock() {
   } else {
     $('.clock').html(minutesLeft + ':' + secondsLeft);
   }
-  if (minutesLeft < 1) {
+  if (minutesLeft <= 1 && secondsLeft === 0 || minutesLeft < 1) {
   	$('.clock, .information').css('color', 'red');
   }
   if (secondsLeft < 0) {
@@ -122,6 +124,7 @@ function breakClock() {
       taskTimer = 0;
       clearInterval(timeSetup);
       $('.clock').html('00:00');
+      $('.information').hide();
       $('.stop').text('Reset');
     } else {
       minutesLeft--;
