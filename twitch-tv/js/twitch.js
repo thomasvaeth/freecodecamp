@@ -1,12 +1,19 @@
 var users = [
-  'freecodecamp', 
-  'storbeck', 
-  'terakilobyte', 
-  'habathcx', 
-  'RobotCaleb', 
-  'thomasballinger', 
-  'redbullesports', 
-  'DreamhackCS'
+  'justin', 
+  'syndicate', 
+  'riotgames', 
+  'captainsparklez', 
+  'LIRIK', 
+  'PhantomL0rd', 
+  'esl_csgo', 
+  'sodapoppin',
+  'summit1g',
+  'Nightblue3',
+  'goldglove',
+  'tsm_bjergsen',
+  'imaqtpie',
+  'tsm_theoddone',
+  'trick2g'
 ];
 var status;
 
