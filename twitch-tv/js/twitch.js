@@ -17,7 +17,7 @@ var users = [
 ];
 var status;
 
-function appendUser(icon, name, status, url, info) {
+function appendUser(icon, name, status, link, info) {
   var user = document.createElement('li');
   user.className = 'user';
 
@@ -28,7 +28,7 @@ function appendUser(icon, name, status, url, info) {
 
   var userName = document.createElement('p');
   userName.className = 'user-name';
-  userName.innerHTML = '<a href="' + url + '">' + name + '</a>';
+  userName.innerHTML = '<a href="' + link + '">' + name + '</a>';
   user.appendChild(userName);
 
   var userStatus = document.createElement('span');
@@ -40,9 +40,9 @@ function appendUser(icon, name, status, url, info) {
     var userInfo = document.createElement('p');
     userInfo.className = 'user-info';
     if (info.length >= 50) {
-      userInfo.innerHTML = '<a href="' + url + '" style="color: grey;">' + info.substring(0, 47) + '...</a>';
+      userInfo.innerHTML = '<a href="' + link + '" style="color: grey;">' + info.substring(0, 47) + '...</a>';
     } else {
-      userInfo.innerHTML = '<a href="' + url + '" style="color: grey;">' + info + '</a>';
+      userInfo.innerHTML = '<a href="' + link + '" style="color: grey;">' + info + '</a>';
     }
     user.appendChild(userInfo);
   }
@@ -56,14 +56,14 @@ $(document).ready(function () {
       if (callback.logo === null) {
         callback.logo = 'images/no.png';
       }
-      var url = 'http://twitch.tv/' + user;
+      var link = 'http://twitch.tv/' + user;
       $.get('https://api.twitch.tv/kraken/streams/' + user, function(nextCallback) {
         if (nextCallback.stream === null) {
           status = 'fa fa-exclamation';
-          appendUser(callback.logo, callback.display_name, status, url);
+          appendUser(callback.logo, callback.display_name, status, link);
         } else {
           status = 'fa fa-twitch';
-          appendUser(callback.logo, callback.display_name, status, url, callback.status);
+          appendUser(callback.logo, callback.display_name, status, link, callback.status);
         }
       }, 'jsonp');
     }, 'jsonp');
