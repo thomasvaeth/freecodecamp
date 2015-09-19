@@ -1,0 +1,106 @@
+body {
+  background-color: white;
+  font-family: Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #6441a5;
+}
+
+.twitch {
+  display: block;
+  margin: 0 auto 0 auto;
+  width: 400px;
+}
+
+.container {
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid #6441a5;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  background-color: #6441a5;
+  color: white;
+  padding: 20px;
+}
+
+td:hover {
+  cursor: pointer;
+}
+
+#online {
+  border-width: 0 1px;
+  border-style: solid;
+  border-color: white;
+}
+
+form {
+  padding: 15px;
+  border-bottom: 1px solid gainsboro;
+}
+
+input {
+  border: 1px solid gainsboro;
+  border-radius: 15px;
+  height: 25px;
+  padding: 0 30px;
+  width: 80%;
+  background: url('../images/search.png') no-repeat 10px;
+  background-size: 15px;
+  color: grey;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.user {
+  display: block;
+  padding: 15px;
+  text-align: left;
+}
+
+.user-icon {
+  border-radius: 100%;
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  float: left;
+}
+
+.user-name {
+  display: inline-block;
+  padding-left: 10px;
+}
+
+.user-info {
+  display: inline-block;
+  color: grey;
+  font-size: 12px;
+  margin-top: -25px;
+  padding-left: 10px;
+}
+
+.user-status {
+  display: inline-block;
+  vertical-align: middle;
+  float: right;
+  padding-top: 15px;
+}
+
+.fa-exclamation {
+  color: red;
+}
+
+.fa-twitch {
+  color: #6441a5;
+}
