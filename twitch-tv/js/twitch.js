@@ -25,6 +25,7 @@ function appendUser(icon, name, status, link, info) {
   userIcon.className = 'user-icon';
   userIcon.setAttribute('src', icon);
   user.appendChild(userIcon);
+  $(userIcon).wrap('<a href="' + link + '"></a>');
 
   var userName = document.createElement('p');
   userName.className = 'user-name';
