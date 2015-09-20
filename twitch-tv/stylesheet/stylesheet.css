@@ -36,6 +36,10 @@ td:hover {
   cursor: pointer;
 }
 
+.active {
+  background-color: #B9a3e3;
+}
+
 #online {
   border-width: 0 1px;
   border-style: solid;
