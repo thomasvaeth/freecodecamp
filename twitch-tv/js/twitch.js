@@ -54,19 +54,21 @@ $(document).ready(function () {
   
   users.forEach(function(user) {
     $.get('https://api.twitch.tv/kraken/channels/' + user, function(callback) {
-      if (callback.logo === null) {
-        callback.logo = 'images/no.png';
-      }
-      var link = 'http://twitch.tv/' + user;
-      $.get('https://api.twitch.tv/kraken/streams/' + user, function(nextCallback) {
-        if (nextCallback.stream === null) {
-          status = 'fa fa-exclamation';
-          appendUser(callback.logo, callback.display_name, status, link);
-        } else {
-          status = 'fa fa-twitch';
-          appendUser(callback.logo, callback.display_name, status, link, callback.status);
+      if (callback.error !== "Not Found") {
+        if (callback.logo === null) {
+          callback.logo = 'images/no.png';
         }
-      }, 'jsonp');
+        var link = 'http://twitch.tv/' + user;
+        $.get('https://api.twitch.tv/kraken/streams/' + user, function(nextCallback) {
+          if (nextCallback.stream === null) {
+            status = 'fa fa-exclamation';
+            appendUser(callback.logo, callback.display_name, status, link);
+          } else {
+            status = 'fa fa-twitch';
+            appendUser(callback.logo, callback.display_name, status, link, callback.status);
+          }
+        }, 'jsonp');
+      }
     }, 'jsonp');
   });
   
