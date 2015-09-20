@@ -86,16 +86,15 @@ ul {
 }
 
 .user-info {
-  display: inline-block;
+  display: block;
   color: grey;
   font-size: 12px;
-  margin-top: -25px;
-  padding-left: 10px;
+  margin-top: -10px;
+  padding-left: 60px;
 }
 
 .user-status {
   display: inline-block;
-  vertical-align: middle;
   float: right;
   padding-top: 15px;
 }
@@ -105,5 +104,5 @@ ul {
 }
 
 .fa-twitch {
-  color: #6441a5;
+  color: green;
 }
