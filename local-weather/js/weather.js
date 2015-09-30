@@ -1,8 +1,3 @@
-$(document).ready(function() {
-  $('.btn-celsius').hide();
-  $('.btn-fahrenheit').hide();
-});
-
 $.getJSON('http://ip-api.com/json', function(ipAddress) {
 
   $.getJSON('http://api.openweathermap.org/data/2.5/weather?lat=' + ipAddress.lat + '&lon=' + ipAddress.lon, function(forecast) {

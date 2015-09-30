@@ -1,3 +1,8 @@
+.btn-celsius, 
+.btn-fahrenheit {
+  display: none;
+}
+
 a,
 a:focus,
 a:hover {
