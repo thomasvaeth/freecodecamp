@@ -1,3 +1,15 @@
+.break, 
+.start-task, 
+.start-break, 
+.stop, 
+.reset, 
+.set-break, 
+.add-break, 
+.subtract-break, 
+.information {
+  display: none;
+}
+
 .add-task,
 .subtract-task,
 .add-break,
@@ -9,6 +21,10 @@ a,
 a:focus,
 a:hover {
   color: #fff;
+}
+
+button:focus {
+  outline: 0 !important;
 }
 
 .btn-default,

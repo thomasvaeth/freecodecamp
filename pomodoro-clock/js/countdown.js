@@ -1,7 +1,6 @@
 $(document).ready(function() {
   $('.task').html(taskTimer + clock);
   $('.break').html('0' + breakTimer + clock);
-  $('.break, .start-task, .start-break, .stop, .reset, .set-break, .add-break, .subtract-break, .information').hide();
 });
 
 var taskTimer = 25;
