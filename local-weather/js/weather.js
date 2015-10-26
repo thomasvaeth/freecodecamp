@@ -1,6 +1,6 @@
 $.getJSON('http://ip-api.com/json', function(ipAddress) {
 
-  $.getJSON('http://api.openweathermap.org/data/2.5/weather?lat=' + ipAddress.lat + '&lon=' + ipAddress.lon, function(forecast) {
+  $.getJSON('http://api.openweathermap.org/data/2.5/weather?lat=' + ipAddress.lat + '&lon=' + ipAddress.lon + '&appid=2edaedf16edc63b6bf3c46f7d9a75195', function(forecast) {
     var celsius = forecast.main.temp - 273.15;
     var fahrenheit = celsius * 1.8 + 32;
     var backgroundPic = forecast.weather[0].icon.substring(0, 2);
