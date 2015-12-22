@@ -22,9 +22,20 @@
     <script src="js/app.js"></script>
 	</head>
 	<body ng-controller="StoryController">
-		<div class="well" ng-repeat="story in stories">
-			{{ story.headline }}
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-md-4" ng-repeat="story in stories | orderBy:'-rank'">
+					<div class="thumbnail">
+						<img ng-src="{{ story.image }}" alt="Headline Image">
+						<div class="caption">
+							<h3>{{ story.headline }}</h3>
+							<p>{{ story.author.username }}</p>
+							<p>{{ story.rank }}</p>
+							<p><a ng-href="{{ story.link }}" target="_blank" class="btn btn-primary" role="button">Read</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-
 	</body>
 </html>
