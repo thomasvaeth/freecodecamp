@@ -21,8 +21,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-resource.js"></script>
     <script src="js/app.js"></script>
 	</head>
-	<body>
-		<h1 class="text-center">Hello World</h1>
+	<body ng-controller="StoryController">
+		<div class="well" ng-repeat="story in stories">
+			{{ story.headline }}
+		</div>
 
 	</body>
 </html>
