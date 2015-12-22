@@ -8,6 +8,8 @@
 
 		<!-- Bootstrap -->
 		<link href="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 		<!-- Customized -->
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -23,14 +25,16 @@
 	</head>
 	<body ng-controller="StoryController">
 		<div class="container">
+			<h1 class="text-center">Free Code Camp</h1>
+			<h3 class="text-center">Camper News</h3>
 			<div class="row">
-				<div class="col-sm-6 col-md-4" ng-repeat="story in stories | orderBy:'-rank'">
+				<div class="col-xs-4 col-md-3" ng-repeat="story in stories | orderBy:'-rank'">
 					<div class="thumbnail">
-						<img ng-src="{{ story.image }}" alt="Headline Image">
+						<img ng-src="{{ story.author.picture }}" alt="Headline Image">
 						<div class="caption">
-							<h3>{{ story.headline }}</h3>
-							<p>{{ story.author.username }}</p>
-							<p>{{ story.rank }}</p>
+							<p><a ng-href="{{ story.link }}" target="_blank">{{ story.headline | limitTo:headlineLimit }}...</a></p>
+							<p>Shared by <a ng-href="http://www.freecodecamp.com/{{ story.author.username }}" target="_blank">{{ story.author.username }}</a></p>
+							<p><i class="fa fa-caret-up"></i> {{ story.rank }}</p>
 							<p><a ng-href="{{ story.link }}" target="_blank" class="btn btn-primary" role="button">Read</a></p>
 						</div>
 					</div>

@@ -6,6 +6,7 @@ app.factory('Story', ['$resource', function($resource) {
 
 app.controller('StoryController', ['$scope', 'Story', function($scope, Story) {
 	$scope.stories = [];
+	$scope.headlineLimit = 30;
 
 	Story.query(function success(data) {
 		$scope.stories = data;
