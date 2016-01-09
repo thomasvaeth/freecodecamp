@@ -1,0 +1,30 @@
+.calculator {
+	height: %;
+	width: 228px;
+	border: 1px solid black;
+	border-radius: 6px;
+}
+
+.display {
+	font-size: 45px;
+  background: transparent;
+  box-sizing: border-box;
+  display: block;
+  width: inherit;
+  border: 0;
+  margin-top: 28px;
+  text-align: right;
+  padding: 0 10px;
+}
+
+.button {
+	height: 47px;
+	width: 57px;
+	float: left;
+	border: 0;
+	font-size: 22px;
+}
+
+.double {
+	width: 114px;
+}
