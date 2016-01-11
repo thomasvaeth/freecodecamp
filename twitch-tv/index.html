@@ -1,36 +1,35 @@
 <!DOCTYPE html>
 
 <html>
-	<head>
+  <head>
     <link rel="stylesheet" type="text/css" href="stylesheet/stylesheet.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-		<link rel="icon" href="images/twitch.ico" />
-    <title>Twitch TV</title>
-	</head>
+    <link rel="icon" href="images/twitch.ico">
+  <title>Twitch TV</title>
+  </head>
+  <body>
+    <img src='images/logo.png' class='twitch' />
+    <div class='container'>
+      <div class='buttons-container'>
+        <table>
+          <tr>
+            <td id='all' class='active'>All</td>
+            <td id='online'>Online</td>
+            <td id='offline'>Offline</td>
+          </tr>
+        </table>
+      </div>
+      <div class='search-container'>
+        <form>
+          <input type='text'></input>
+        </form>
+      </div>
+      <div class='users-container'>
+        <ul></ul>
+      </div>
+    </div>
 
-	<body>
-  	<img src='images/logo.png' class='twitch' />
-		<div class='container'>
-  		<div class='buttons-container'>
-    		<table>
-      		<tr>
-        		<td id='all' class='active'>All</td>
-        		<td id='online'>Online</td>
-        		<td id='offline'>Offline</td>
-      		</tr>
-    		</table>
-  		</div>
-  		<div class='search-container'>
-    		<form>
-      		<input type='text'></input>
-    		</form>
-  		</div>
-  		<div class='users-container'>
-    		<ul></ul>
-  		</div>
-		</div>
-		
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-		<script src="js/twitch.js"></script>
-	</body>
+    <script src="js/twitch.js"></script>
+  </body>
 </html>
