@@ -3,6 +3,7 @@
 	<head>
 		<title>Calculator</title>
 
+		<link href="https://fonts.googleapis.com/css?family=Roboto:100,400" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" type="text/css" href="stylesheet/main.css">
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
@@ -13,35 +14,35 @@
 			<input type="text" class="display" ng-model="display" readonly></input>
 			<div class="buttons">
 				<div class="row">
-					<button class="button" ng-click="clear()">AC</button>
-					<button class="button" ng-click="sign()">
+					<button class="button top" ng-click="clear()">AC</button>
+					<button class="button top" ng-click="sign()">
 						<sup>&plus;</sup>/<sub>&minus;</sub>
 					</button>
-					<button class="button" ng-click="percent()">%</button>
-					<button class="button" ng-click="setOperator('/')">&divide;</button>
+					<button class="button top" ng-click="percent()">%</button>
+					<button class="button operator" ng-click="setOperator('/')">&divide;</button>
 				</div>
 				<div class="row">
 					<button class="button" ng-click="number(7)">7</button>
 					<button class="button" ng-click="number(8)">8</button>
 					<button class="button" ng-click="number(9)">9</button>
-					<button class="button" ng-click="setOperator('*')">&times;</button>
+					<button class="button operator" ng-click="setOperator('*')">&times;</button>
 				</div>
 				<div class="row">
 					<button class="button" ng-click="number(4)">4</button>
 					<button class="button" ng-click="number(5)">5</button>
 					<button class="button" ng-click="number(6)">6</button>
-					<button class="button" ng-click="setOperator('-')">&minus;</button>
+					<button class="button operator" ng-click="setOperator('-')">&minus;</button>
 				</div>
 				<div class="row">
 					<button class="button" ng-click="number(1)">1</button>
 					<button class="button" ng-click="number(2)">2</button>
 					<button class="button" ng-click="number(3)">3</button>
-					<button class="button" ng-click="setOperator('+')">&plus;</button>
+					<button class="button operator" ng-click="setOperator('+')">&plus;</button>
 				</div>
 				<div class="row">
 					<button class="button double" ng-click="number(0)">0</button>
-					<button class="button" ng-click="number('.')">.</button>
-					<button class="button" ng-click="setOperator('=')">&equals;</button>
+					<button class="button decimal" ng-click="number('.')">.</button>
+					<button class="button operator equal" ng-click="setOperator('=')">&equals;</button>
 				</div>
 			</div>
 		</div>
