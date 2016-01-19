@@ -1,9 +1,29 @@
+/* Background image */
+body {
+	background-image: url('http://cdn.backgroundhost.com/backgrounds/subtlepatterns/retina_wood.png');
+}
+
+/* Chrome blue outline */
 *:focus {
 	outline: 0;
 }
 
-.calculator {
+/* Common properties */
+.calulator,
+.display,
+.button {
 	cursor: pointer;
+}
+
+.display,
+.button {
+	font-family: 'Roboto', Helvetica, sans-serif;
+  font-weight: 100;
+  border: 0;
+}
+
+/* Main div */
+.calculator {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -13,41 +33,35 @@
 	height: 316px;
 	width: 228px;
 	background: #000000;
-	border-radius: 6px;
 }
 
+/* Display calculation */
 .display {
-	cursor: pointer;
-	font-family: 'Roboto', Helvetica, sans-serif;
-  font-weight: 100;
-	font-size: 45px;
 	box-sizing: border-box;
+	display: block;
+	width: inherit;
+	margin-top: 28px;
+	padding: 0 10px;
 	background: #000000;
-  display: block;
-  width: inherit;
-  border: 0;
-  margin-top: 28px;
-  text-align: right;
-  padding: 0 10px;
   color: #FFFFFF;
+  font-size: 45px;
+  text-align: right;
 }
 
+/* All buttons */
 .button {
-	cursor: pointer;
-	font-family: 'Roboto', Helvetica, sans-serif;
-  font-weight: 100;
-  font-size: 22px;
 	height: 47px;
 	width: 57px;
 	float: left;
-	border: 0;
 	background: #E0E0E0;
+  font-size: 22px;
 }
 
 .button:active {
 	background: #BABABA;
 }
 
+/* Top row - Clear, sign, percentage */
 .top {
 	background: #D6D6D6;
 }
@@ -56,6 +70,7 @@
 	background: #B0B0B0;
 }
 
+/* Right column - All operators */
 .operator {
 	background: #FF8C00;
 	color: #FFFFFF;
@@ -66,8 +81,14 @@
 	background: #B36200;
 }
 
+/* Decimal was too small */
 .decimal {
 	font-weight: 400;
+}
+
+/* Adding border radius */
+.calculator {
+	border-radius: 6px;
 }
 
 .equal {
