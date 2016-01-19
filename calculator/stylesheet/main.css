@@ -53,6 +53,7 @@ button:focus {
 	height: 47px;
 	width: 57px;
 	float: left;
+	padding: 2px 0 3px 0;
 	background: #E0E0E0;
   font-size: 22px;
 }
