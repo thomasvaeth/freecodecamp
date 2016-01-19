@@ -10,6 +10,11 @@
   - JavaScript
   - jQuery
   - Bootstrap
+* [Calculator](http://codepen.io/thomasvaeth/full/VerWLg/)
+  - HTML
+  - CSS
+  - JavaScript
+  - AngularJS
 * [Pomodoro Clock](http://codepen.io/thomasvaeth/full/QjwPgz/)
   - HTML
   - CSS
