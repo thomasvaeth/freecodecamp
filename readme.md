@@ -44,3 +44,12 @@
   - JavaScript
   - jQuery
   - Twitch API
+
+### React Projects
+* [Camper Leaderboard](http://codepen.io/thomasvaeth/full/JGMEMm/)
+  - HTML
+  - CSS
+  - React
+  - JSX
+  - Foundation
+  - Free Code Camp API
