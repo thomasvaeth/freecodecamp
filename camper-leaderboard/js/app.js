@@ -45,15 +45,17 @@ var Leaderboard = React.createClass({
 			);
 		});
 		return (
-			<table className="table table-bordered table-condensed table-striped">
+			<table className="hover">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Camper Name</th>
+						<th><a href="#" onClick={this.recent}>Points in past 30 days {this.state.sort === 'Recent' ? '▼' : ''}</a></th>
+						<th><a href="#" onClick={this.alltime}>All time points {this.state.sort === 'AllTime' ? '▼' : ''}</a></th>
+					</tr>
+				</thead>
 				<tbody>
-				<tr className="warning">
-					<th>#</th>
-					<th>Camper Name</th>
-					<th><a href="#" onClick={this.recent}>Points in past 30 days {this.state.sort === 'Recent' ? '▼' : ''}</a></th>
-					<th><a href="#" onClick={this.alltime}>All time points {this.state.sort === 'AllTime' ? '▼' : ''}</a></th>
-				</tr>
-				{leaderboard}
+					{leaderboard}
 				</tbody>
 			</table>
 		);
