@@ -1,11 +1,7 @@
 var App = React.createClass({
   render: function() {
     return (
-    	<div className="container">
-      	<div className="well">
-        	<h1>Hello</h1>
-      	</div>
-      </div>
+    	<Leaderboard />
     );
   }
 });
@@ -15,7 +11,7 @@ var Leader = React.createClass({
 		return (
 			<tr>
 				<td>{this.props.rank}</td>
-				<td>{this.props.img} {this.props.name}</td>
+				<td><img src={this.props.image} /> {this.props.name}</td>
 				<td>{this.props.recentPoints}</td>
 				<td>{this.props.allPoints}</td>
 			</tr>
@@ -24,19 +20,37 @@ var Leader = React.createClass({
 });
 
 var Leaderboard = React.createClass({
+	getInitialState: function() {
+		return {camper: [], sort: 'Recent'}
+	},
+	componentDidMount: function() {
+		this.recent();
+	},
+	recent: function() {
+		var self = this;
+		$.get('http://fcctop100.herokuapp.com/api/fccusers/top/recent', function(data) {
+			self.setState({camper: data, sort: 'Recent'});
+		});
+	},
+	alltime: function() {
+		var self = this;
+		$.get('http://fcctop100.herokuapp.com/api/fccusers/top/alltime', function(data) {
+			self.setState({camper: data, sort: 'AllTime'});
+		});
+	},
 	render: function() {
-		var leaderboard = this.state.data.map(function(person, idx) {
+		var leaderboard = this.state.camper.map(function(person, idx) {
 			return (
-				<Leader key={idx} rank={idx + 1} name={person.username} recentPoints={person.recent} allPoints={person.alltime} />
+				<Leader key={idx} rank={idx + 1} image={person.img} name={person.username} recentPoints={person.recent} allPoints={person.alltime} />
 			);
 		});
 		return (
-			<table className="table table-striped">
+			<table className="table table-hover">
 				<tr>
 					<th>#</th>
 					<th>Camper Name</th>
-					<th>Points in past 30 days</th>
-					<th>All time points</th>
+					<th><a href="#" onClick={this.recent}>Points in past 30 days</a></th>
+					<th><a href="#" onClick={this.alltime}>All time points</a></th>
 				</tr>
 				{leaderboard}
 			</table>
