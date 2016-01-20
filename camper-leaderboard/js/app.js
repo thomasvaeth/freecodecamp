@@ -11,7 +11,7 @@ var Leader = React.createClass({
 		return (
 			<tr>
 				<td>{this.props.rank}</td>
-				<td><img src={this.props.image} /> {this.props.name}</td>
+				<td><a href={"http://www.freecodecamp.com/" + this.props.name} target="_blank"><img src={this.props.image} /> {this.props.name}</a></td>
 				<td>{this.props.recentPoints}</td>
 				<td>{this.props.allPoints}</td>
 			</tr>
@@ -50,8 +50,8 @@ var Leaderboard = React.createClass({
 				<tr className="warning">
 					<th>#</th>
 					<th>Camper Name</th>
-					<th><a href="#" onClick={this.recent}>Points in past 30 days</a></th>
-					<th><a href="#" onClick={this.alltime}>All time points</a></th>
+					<th><a href="#" onClick={this.recent}>Points in past 30 days {this.state.sort === 'Recent' ? '▼' : ''}</a></th>
+					<th><a href="#" onClick={this.alltime}>All time points {this.state.sort === 'AllTime' ? '▼' : ''}</a></th>
 				</tr>
 				{leaderboard}
 				</tbody>
@@ -60,4 +60,4 @@ var Leaderboard = React.createClass({
 	}
 });
 
-ReactDOM.render(<App />, document.getElementById('container'));
+ReactDOM.render(<App />, document.getElementById('freecodecamp'));
