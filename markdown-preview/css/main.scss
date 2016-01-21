@@ -1,0 +1,15 @@
+@mixin margin-top {
+	margin-top: 20px;
+}
+
+#freecodecamp {
+	textarea {
+	  @include margin-top;
+	}
+
+	.overflow {
+		@include margin-top;
+	  height: 610px;
+	  overflow-y: scroll;
+	}
+}
