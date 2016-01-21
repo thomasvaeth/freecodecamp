@@ -48,7 +48,7 @@
 ### React Projects
 * [Camper Leaderboard](http://codepen.io/thomasvaeth/full/JGMEMm/)
   - HTML
-  - CSS
+  - Sass
   - React
   - JSX
   - Foundation

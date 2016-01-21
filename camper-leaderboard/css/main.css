@@ -1,8 +1,7 @@
-table {
-	margin-top: 16px;
-}
+#freecodecamp table {
+  margin-top: 16px; }
+#freecodecamp img {
+  height: 40px;
+  width: 40px; }
 
-img {
-	height: 40px;
-	width: 40px;
-}
+/*# sourceMappingURL=main.css.map */
