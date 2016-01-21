@@ -46,6 +46,13 @@
   - Twitch API
 
 ### React Projects
+* [Markdown Previewer](http://codepen.io/thomasvaeth/full/dGJWxK/)
+  - HTML
+  - Sass
+  - React
+  - JSX
+  - Marked
+  - Foundation
 * [Camper Leaderboard](http://codepen.io/thomasvaeth/full/JGMEMm/)
   - HTML
   - Sass
