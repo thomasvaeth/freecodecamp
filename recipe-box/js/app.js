@@ -1,6 +1,7 @@
 var Accordion = ReactBootstrap.Accordion;
 var ListGroupItem = ReactBootstrap.ListGroupItem;
 var ListGroup = ReactBootstrap.ListGroup;
+var Panel = ReactBootstrap.Panel;
 
 var recipes = typeof localStorage['recipeBook'] !== 'undefined' ? JSON.parse(localStorage['recipeBook']) : [
 	{title: 'Chicken Quesadillas', ingredients: ['Chicken Breast', 'Shredded Cheddar Cheese', 'Shredded Monterey Jack Cheese', 'Flour Tortillas']}, 
@@ -52,4 +53,18 @@ var Recipe = React.createClass({
 	}
 });
 
+function renderRecipes() {
+	localStorage.setItem('recipeBook', JSON.stringify(recipes));
+	var recipeArr = [];
+	recipes.forEach(function(recipe, idx) {
+		recipeArr.push(
+			<Panel header={recipe.title} eventKey={idx}>
+				<Recipe ingredients={recipe.ingredients} index={idx} />
+			</Panel>
+		);
+	});
+	ReactDOM.render(<RecipeBook data={recipeArr} />, document.getElementById('freecodecamp'));
+}
+
 ReactDOM.render(<App />, document.getElementById('freecodecamp'));
+renderRecipes();
