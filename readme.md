@@ -60,3 +60,10 @@
   - JSX
   - Foundation
   - Free Code Camp API
+* [Recipe Box](http://codepen.io/thomasvaeth/full/EPEpvW/)
+  - HTML
+  - Sass
+  - React
+  - JSX
+  - jQuery
+  - Bootstrap/React-Bootstrap
