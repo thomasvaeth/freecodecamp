@@ -1,11 +1,13 @@
 var Accordion = ReactBootstrap.Accordion;
 var ButtonToolbar = ReactBootstrap.ButtonToolbar;
 var Button = ReactBootstrap.Button;
+var Col = ReactBootstrap.Col;
 var Input = ReactBootstrap.Input;
 var ListGroup = ReactBootstrap.ListGroup;
 var ListGroupItem = ReactBootstrap.ListGroupItem;
 var Modal = ReactBootstrap.Modal;
 var Panel = ReactBootstrap.Panel;
+var Row = ReactBootstrap.Row;
 
 var recipes = typeof localStorage['recipeBook'] !== 'undefined' ? JSON.parse(localStorage['recipeBook']) : [
 	{title: 'Chicken Quesadillas', ingredients: ['Chicken Breast', 'Shredded Cheddar Cheese', 'Shredded Monterey Jack Cheese', 'Flour Tortillas']}, 
@@ -55,14 +57,16 @@ var App = React.createClass({
   render: function() {
     return (
     	<div>
-    		<Button bsStyle="primary" id="modal" onClick={this.openRecipe}>Add Recipe</Button>
-    		<Modal show={this.state.modal} onHide={this.closeRecipe}>
-    			<Modal.Header>
+    		<Col xs={4} xsOffset={4}>
+    			<Button bsStyle="primary" id="modal" onClick={this.openRecipe}>Add Recipe</Button>
+    		</Col>
+    		<Modal bsSize="sm" show={this.state.modal} onHide={this.closeRecipe}>
+    			<Modal.Header closeButton="true">
     				<Modal.Title id="modalTitle">Add Recipe</Modal.Title>
     			</Modal.Header>
     			<Modal.Body>
     				<form>
-    					<Input type="text" id="title" label="Name" placeholder="Name" />
+    					<Input type="text" id="title" label="Name" placeholder="Name" autoFocus="true" />
     					<Input type="textarea" id="ingredients" label="Ingredients" placeholder="Ingredients seperated by commas" />
     				</form>
     			</Modal.Body>
@@ -79,9 +83,12 @@ var App = React.createClass({
 var RecipeBook = React.createClass({
 	render: function() {
 		return (
-			<Accordion>
-				{this.props.data}
-			</Accordion>
+			<Col xs={4} xsOffset={4}>
+				<h1>Recipe Box</h1>
+				<Accordion>
+					{this.props.data}
+				</Accordion>
+			</Col>
 		);
 	}
 });
