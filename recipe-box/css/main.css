@@ -5,10 +5,9 @@ body {
   margin-top: 20px; }
   #freecodecamp h1 {
     text-align: center; }
-
-.panel-group {
-  margin-bottom: 10px; }
-  .panel-group .list-group {
+  #freecodecamp .panel-group {
     margin-bottom: 10px; }
+    #freecodecamp .panel-group .list-group {
+      margin-bottom: 10px; }
 
 /*# sourceMappingURL=main.css.map */
