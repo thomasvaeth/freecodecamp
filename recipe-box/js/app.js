@@ -1,3 +1,7 @@
+var ButtonToolbar = ReactBootstrap.ButtonToolbar;
+var Button = ReactBootstrap.Button;
+var Modal = ReactBootstrap.Modal;
+var Input = ReactBootstrap.Input;
 var Accordion = ReactBootstrap.Accordion;
 var ListGroupItem = ReactBootstrap.ListGroupItem;
 var ListGroup = ReactBootstrap.ListGroup;
@@ -11,9 +15,37 @@ var recipes = typeof localStorage['recipeBook'] !== 'undefined' ? JSON.parse(loc
 
 
 var App = React.createClass({
+	getInitialState: function() {
+		return {modal: false}
+	},
+	openRecipe: function() {
+		this.setState({modal: true});
+	},
+	closeRecipe: function() {
+		recipeTitle = '';
+		recipeIngredients = [];
+		this.setState({modal: false});
+	},
+	addRecipe: function() {
+		var title = document.getElementById('title').value;
+		var ingredients = document.getElementById('ingredients').value.split(',');
+	},
   render: function() {
     return (
-    	<h1>Hello world!</h1>
+    	<div>
+    		<Button bsStyle='primary' id='modal' onClick={this.openRecipe}>Add Recipe</Button>
+    		<Modal show={this.state.modal} onHide={this.closeRecipe}>
+    			<Modal.Header>
+    				<Modal.Title>Add/Edit Recipe</Modal.Title>
+    			</Modal.Header>
+    			<Modal.Body>
+
+    			</Modal.Body>
+    			<Modal.Footer>
+
+    			</Modal.Footer>
+    		</Modal>
+    	</div>
     );
   }
 });
@@ -46,9 +78,24 @@ var IngredientsList = React.createClass({
 });
 
 var Recipe = React.createClass({
+	editRecipe: function() {
+		recipeTitle = this.props.title;
+		recipeIngredients = this.props.ingredients;
+		document.getElementById('modal').click();
+	},
+	removeRecipe: function() {
+		recipes.splice(this.props.index, 1);
+		renderRecipes();
+	},
 	render: function() {
 		return (
-			<IngredientsList ingredients={this.props.ingredients} />
+			<div>
+				<IngredientsList ingredients={this.props.ingredients} />
+				<ButtonToolbar>
+					<Button bsStyle='danger' onClick={this.removeRecipe}>Delete</Button>
+					<Button bsStyle='info' onClick={this.editRecipe}>Edit</Button>
+				</ButtonToolbar>
+			</div>
 		);
 	}
 });
@@ -66,5 +113,5 @@ function renderRecipes() {
 	ReactDOM.render(<RecipeBook data={recipeArr} />, document.getElementById('freecodecamp'));
 }
 
-ReactDOM.render(<App />, document.getElementById('freecodecamp'));
+ReactDOM.render(<App />, document.getElementById('recipe'));
 renderRecipes();
