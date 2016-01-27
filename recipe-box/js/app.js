@@ -1,10 +1,10 @@
+var Accordion = ReactBootstrap.Accordion;
 var ButtonToolbar = ReactBootstrap.ButtonToolbar;
 var Button = ReactBootstrap.Button;
-var Modal = ReactBootstrap.Modal;
 var Input = ReactBootstrap.Input;
-var Accordion = ReactBootstrap.Accordion;
-var ListGroupItem = ReactBootstrap.ListGroupItem;
 var ListGroup = ReactBootstrap.ListGroup;
+var ListGroupItem = ReactBootstrap.ListGroupItem;
+var Modal = ReactBootstrap.Modal;
 var Panel = ReactBootstrap.Panel;
 
 var recipes = typeof localStorage['recipeBook'] !== 'undefined' ? JSON.parse(localStorage['recipeBook']) : [
@@ -29,20 +29,28 @@ var App = React.createClass({
 	addRecipe: function() {
 		var title = document.getElementById('title').value;
 		var ingredients = document.getElementById('ingredients').value.split(',');
+		// Using ES2015 to push object to the array!
+		recipes.push({title, ingredients});
+		renderRecipes();
+		this.closeRecipe();
 	},
   render: function() {
     return (
     	<div>
-    		<Button bsStyle='primary' id='modal' onClick={this.openRecipe}>Add Recipe</Button>
+    		<Button bsStyle="primary" id="modal" onClick={this.openRecipe}>Add Recipe</Button>
     		<Modal show={this.state.modal} onHide={this.closeRecipe}>
     			<Modal.Header>
     				<Modal.Title>Add/Edit Recipe</Modal.Title>
     			</Modal.Header>
     			<Modal.Body>
-
+    				<form>
+    					<Input type="text" id="title" label="Name" placeholder="Name" />
+    					<Input type="textarea" id="ingredients" label="Ingredients" placeholder="Ingredients seperated by commas" />
+    				</form>
     			</Modal.Body>
     			<Modal.Footer>
-
+    				<Button bsStyle="success" onClick={this.addRecipe}>Add/Edit</Button>
+    				<Button onClick={this.closeRecipe}>Close</Button>
     			</Modal.Footer>
     		</Modal>
     	</div>
@@ -92,8 +100,8 @@ var Recipe = React.createClass({
 			<div>
 				<IngredientsList ingredients={this.props.ingredients} />
 				<ButtonToolbar>
-					<Button bsStyle='danger' onClick={this.removeRecipe}>Delete</Button>
-					<Button bsStyle='info' onClick={this.editRecipe}>Edit</Button>
+					<Button bsStyle="danger" onClick={this.removeRecipe}>Delete</Button>
+					<Button bsStyle="info" onClick={this.editRecipe}>Edit</Button>
 				</ButtonToolbar>
 			</div>
 		);
