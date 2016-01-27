@@ -4,13 +4,16 @@ body {
 
 #freecodecamp {
 	margin-top: 20px;
+
+	h1 {
+		text-align: center;
+	}
 }
 
-h1 {
-	text-align: center;
-}
-
-.panel-group,
-.list-group {
+.panel-group {
 	margin-bottom: 10px;
+
+	.list-group {
+		margin-bottom: 10px;
+	}
 }

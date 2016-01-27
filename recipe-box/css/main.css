@@ -3,12 +3,12 @@ body {
 
 #freecodecamp {
   margin-top: 20px; }
+  #freecodecamp h1 {
+    text-align: center; }
 
-h1 {
-  text-align: center; }
-
-.panel-group,
-.list-group {
+.panel-group {
   margin-bottom: 10px; }
+  .panel-group .list-group {
+    margin-bottom: 10px; }
 
 /*# sourceMappingURL=main.css.map */
