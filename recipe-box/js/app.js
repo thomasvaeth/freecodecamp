@@ -20,6 +20,17 @@ var App = React.createClass({
 	},
 	openRecipe: function() {
 		this.setState({modal: true});
+		// I need to ask Quincy/FCC about this small section because DOM wasn't working.
+		if (document.getElementById('title') && document.getElementById('ingredients')) {
+      $('#title').val(recipeTitle);
+      $('#ingredients').val(recipeIngredients);
+      if (recipeTitle !== '') {
+      	$('#modalTitle').text('Edit Recipe');
+      	$('#modalButton').text('Edit');
+      }
+    } else {
+    	window.requestAnimationFrame(this.openRecipe);
+    }
 	},
 	closeRecipe: function() {
 		recipeTitle = '';
@@ -40,7 +51,7 @@ var App = React.createClass({
     		<Button bsStyle="primary" id="modal" onClick={this.openRecipe}>Add Recipe</Button>
     		<Modal show={this.state.modal} onHide={this.closeRecipe}>
     			<Modal.Header>
-    				<Modal.Title>Add/Edit Recipe</Modal.Title>
+    				<Modal.Title id="modalTitle">Add Recipe</Modal.Title>
     			</Modal.Header>
     			<Modal.Body>
     				<form>
@@ -49,7 +60,7 @@ var App = React.createClass({
     				</form>
     			</Modal.Body>
     			<Modal.Footer>
-    				<Button bsStyle="success" onClick={this.addRecipe}>Add/Edit</Button>
+    				<Button id="modalButton" bsStyle="success" onClick={this.addRecipe}>Add</Button>
     				<Button onClick={this.closeRecipe}>Close</Button>
     			</Modal.Footer>
     		</Modal>
@@ -114,7 +125,7 @@ function renderRecipes() {
 	recipes.forEach(function(recipe, idx) {
 		recipeArr.push(
 			<Panel header={recipe.title} eventKey={idx}>
-				<Recipe ingredients={recipe.ingredients} index={idx} />
+				<Recipe index={idx} title={recipe.title} ingredients={recipe.ingredients} />
 			</Panel>
 		);
 	});
