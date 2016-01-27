@@ -40,8 +40,15 @@ var App = React.createClass({
 	addRecipe: function() {
 		var title = document.getElementById('title').value;
 		var ingredients = document.getElementById('ingredients').value.split(',');
+		var previousRecipe = false;
+		recipes.forEach(function(recipe) {
+			if (recipe.title === title) {
+				recipe.ingredients = ingredients;
+				previousRecipe = true;
+			}
+		}); 
 		// Using ES2015 to push object to the array!
-		recipes.push({title, ingredients});
+		if (!previousRecipe) recipes.push({title, ingredients});
 		renderRecipes();
 		this.closeRecipe();
 	},
