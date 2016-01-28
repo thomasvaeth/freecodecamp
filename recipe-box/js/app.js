@@ -57,7 +57,7 @@ var App = React.createClass({
   render: function() {
     return (
     	<div>
-    		<Col xs={4} xsOffset={4}>
+    		<Col xs={10} xsOffset={1} sm={6} smOffset={3} md={4} mdOffset={4}>
     			<Button bsStyle="primary" id="modal" onClick={this.openRecipe}>Add Recipe</Button>
     		</Col>
     		<Modal bsSize="sm" show={this.state.modal} onHide={this.closeRecipe}>
@@ -67,7 +67,7 @@ var App = React.createClass({
     			<Modal.Body>
     				<form>
     					<Input type="text" id="title" label="Name" placeholder="Name" autoFocus="true" />
-    					<Input type="textarea" id="ingredients" label="Ingredients" placeholder="Ingredients seperated by commas" />
+    					<Input type="textarea" rows="3" id="ingredients" label="Ingredients" placeholder="Ingredients seperated by commas" />
     				</form>
     			</Modal.Body>
     			<Modal.Footer>
@@ -83,7 +83,7 @@ var App = React.createClass({
 var RecipeBook = React.createClass({
 	render: function() {
 		return (
-			<Col xs={4} xsOffset={4}>
+			<Col xs={10} xsOffset={1} sm={6} smOffset={3} md={4} mdOffset={4}>
 				<h1>Recipe Box</h1>
 				<Accordion>
 					{this.props.data}
