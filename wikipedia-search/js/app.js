@@ -9,7 +9,6 @@ app.controller('WikipediaController', ['$scope', '$http', function($scope, $http
 		$http.jsonp(api + $scope.searchTerm + callback
 		).success(function(data) {
 			$scope.results = data.query.pages;
-			console.log($scope.results);
 		}).error(function(data) {
 			console.log(data);
 		});

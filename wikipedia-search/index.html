@@ -19,6 +19,12 @@
 			<form ng-submit="searchWikipedia(searchTerm)">
 				<input type="text" ng-model="searchTerm">
 			</form>
+			<a href="https://en.wikipedia.org/?curid={{ result.pageid }}" target="_blank" ng-repeat="result in results">
+				<div class="callout large">
+					<h2>{{ result.title }}</h2>
+					<p>{{ result.extract }}</p>
+				</div>
+			</a>
 		</div>
 	</body>
 </html>
