@@ -12,5 +12,7 @@ app.controller('WikipediaController', ['$scope', '$http', function($scope, $http
 		}).error(function(data) {
 			console.log(data);
 		});
+
+		if ($scope.searchTerm === '') $scope.results = [];
 	}
 }]);
