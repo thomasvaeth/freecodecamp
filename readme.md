@@ -38,6 +38,13 @@
   - AngularJS
   - Bootstrap
   - Free Code Camp API
+* [Wikipedia Viewer](http://codepen.io/thomasvaeth/full/adKNyx/)
+  - HTML
+  - CSS
+  - JavaScript
+  - AngularJS
+  - Foundation
+  - Wikipedia API
 * [Twitch.tv JSON API](http://codepen.io/thomasvaeth/full/EVyabe/)
   - HTML
   - CSS
