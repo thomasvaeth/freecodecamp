@@ -8,7 +8,7 @@ app.controller('WikipediaController', ['$scope', '$http', function($scope, $http
 		var callback = '&format=json&callback=JSON_CALLBACK';
 		$http.jsonp(api + $scope.searchTerm + callback
 		).success(function(data) {
-			$('#wikipedia').removeClass('vertical');
+			document.getElementById('wikipedia').classList.remove('vertical');
 			$scope.results = data.query.pages;
 		}).error(function(data) {
 			console.log(data);
