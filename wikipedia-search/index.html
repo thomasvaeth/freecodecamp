@@ -14,8 +14,11 @@
 		<script type="text/javascript" src="js/app.js"></script>
 	</head>
 	<body ng-controller="WikipediaController">
-		<form>
-			<input type="text">
-		</form>
+		<div class="small-10 small-offset-1 medium-8 medium-offset-2 large-6 large-offset-3 columns">
+			<h1 class="text-center">Wikipedia Search</h1>
+			<form ng-submit="searchWikipedia(searchTerm)">
+				<input type="text" ng-model="searchTerm">
+			</form>
+		</div>
 	</body>
 </html>
