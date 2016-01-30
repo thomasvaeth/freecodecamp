@@ -88,27 +88,16 @@ body {
   font-weight: bold;
 }
 
-.mastfoot {
-  color: #999;
-  color: rgba(255,255,255,.5);
-}
-
 @media (min-width: 768px) {
-  .mastfoot {
-    position: fixed;
-    bottom: 0;
-  }
   .site-wrapper-inner {
     vertical-align: middle;
   }
-  .mastfoot,
   .cover-container {
     width: 100%;
   }
 }
 
 @media (min-width: 992px) {
-  .mastfoot,
   .cover-container {
     width: 700px;
   }
