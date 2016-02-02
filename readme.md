@@ -7,7 +7,7 @@
 * [Random Quote Machine](http://codepen.io/thomasvaeth/full/epmrEm/)
   - HTML
   - CSS
-  - JavaScript
+  - JavaScript/CoffeeScript
   - jQuery
   - Bootstrap
 ![Screenshot](https://github.com/thomasvaeth/freecodecamp/blob/master/screenshots/random-desktop.png "Screenshot")
