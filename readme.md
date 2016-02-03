@@ -5,7 +5,7 @@
   - CSS
   - Bootstrap
 * [Random Quote Machine](http://codepen.io/thomasvaeth/full/epmrEm/)
-  - HTML
+  - HTML/Jade
   - CSS
   - JavaScript/CoffeeScript
   - jQuery
