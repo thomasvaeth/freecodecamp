@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link href='https://fonts.googleapis.com/css?family=Schoolbell' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+
+		<title>Tic Tac Toe</title>
+	</head>
+	<body>
+		<div id ="symbol-container">
+			Pick a symbol:
+			<button id='x'>X</button>
+			<button id='o'>O</button>
+		</div>
+		<h1>Tic Tac Toe</h1>
+		<div id="left"><p>Player X Wins:</p><span>0</span></div>
+		<div id="right"><p>Player O Wins:</p><span>0</span></div>
+		<div class="container">
+			<div class="space left top" data-num="0">&nbsp;</div>
+			<div class="space middle top" data-num="1">&nbsp;</div>
+			<div class="space right top" data-num="2">&nbsp;</div>
+			<div class="space left" data-num="3">&nbsp;</div>
+			<div class="space middle" data-num="4">&nbsp;</div>
+			<div class="space right" data-num="5">&nbsp;</div>
+			<div class="space left bottom" data-num="6">&nbsp;</div>
+			<div class="space middle bottom" data-num="7">&nbsp;</div>
+			<div class="space right bottom" data-num="8">&nbsp;</div>
+		</div>
+		<div class="container">
+			<p>It's X's turn to go.</p>
+			<button class="new">New Game</button><br>
+			<button class="reset">Reset Wins</button>
+		</div>
+
+		<script type="text/javascript" src="js/tictactoe.js"></script>
+	</body>
+</html>
