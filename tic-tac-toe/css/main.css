@@ -47,7 +47,7 @@ h1 {
   visibility: hidden;
 }
 
-.container div {
+.container span {
 	height: 30%;
 	width: 30%;
 	border: 2px black solid;
@@ -55,7 +55,7 @@ h1 {
 	border-radius: 2%;
 }
 
-.container div:hover {
+.container span:hover {
 	background-color: #ecf0f1;
 }
 
