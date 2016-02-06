@@ -58,6 +58,13 @@
   - jQuery
   - Twitch API
 ![Screenshot](https://github.com/thomasvaeth/freecodecamp/blob/master/screenshots/twitch-desktop.png "Screenshot")
+* [Tic Tac Toe](http://codepen.io/thomasvaeth/full/zrmjeB/)
+  - HTML
+  - CSS
+  - JavaScript
+![Screenshot](https://github.com/thomasvaeth/freecodecamp/blob/master/screenshots/tic-desktop.png "Screenshot")
+
+#####[Front End Development Certificate](http://www.freecodecamp.com/thomasvaeth/front-end-certification)
 
 ### React Projects
 * [Markdown Previewer](http://codepen.io/thomasvaeth/full/dGJWxK/)
