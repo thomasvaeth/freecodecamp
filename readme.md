@@ -64,7 +64,8 @@
   - JavaScript
 ![Screenshot](https://github.com/thomasvaeth/freecodecamp/blob/master/screenshots/tic-desktop.png "Screenshot")
 
-#####[Front End Development Certificate](http://www.freecodecamp.com/thomasvaeth/front-end-certification)
+###[Front End Development Certificate](http://www.freecodecamp.com/thomasvaeth/front-end-certification)
+![Screenshot](https://github.com/thomasvaeth/freecodecamp/blob/master/screenshots/front-desktop.png "Screenshot")
 
 ### React Projects
 * [Markdown Previewer](http://codepen.io/thomasvaeth/full/dGJWxK/)
