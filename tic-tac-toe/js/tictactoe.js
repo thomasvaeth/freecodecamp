@@ -79,11 +79,6 @@ function computerMove(idx) {
     	clearBoard();
 		}
 	}
-
-	if (clicks >= 9) {
-		turn.innerHTML = "The game was a draw. New game. It's X's turn to go.";
-		clearBoard();
-	}
 }
 
 function neverLose() {
@@ -130,7 +125,12 @@ function neverLose() {
 			spaces[goComputer].innerHTML = computerSymbol;
 			computerMove(goComputer);
 		} else {
-			neverLose();
+			if (clicks >= 9) {
+				turn.innerHTML = "The game was a draw. New game. It's X's turn to go.";
+				clearBoard();
+			} else {
+				neverLose();
+			}
 		}
 	}
 }
