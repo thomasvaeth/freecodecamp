@@ -1,16 +1,20 @@
 a,
 a:focus,
 a:hover {
+  text-decoration: none;
   color: #fff;
 }
 
-.btn-default,
-.btn-default:hover,
-.btn-default:focus {
+.btn,
+.btn:hover,
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus {
   color: #333;
-  text-shadow: none;
   background-color: #fff;
   border: 1px solid #fff;
+  text-shadow: none;
+  outline: none;
 }
 
 .quote {

@@ -34,9 +34,7 @@ quotes = [
 
 generateQuote = ->
 	randomQuote = quotes[Math.floor(Math.random() * quotes.length)]
-	if randomQuote.character == "C-3PO" and randomQuote.quote.length + randomQuote.character.length > 95
-		generateQuote()
-	else if randomQuote.quote.length + randomQuote.character.length > 97
+	if randomQuote.quote.length + randomQuote.character.length > 97
 		generateQuote()
 	else
 		$('.quote').text randomQuote.quote
@@ -48,9 +46,6 @@ $(document).ready ->
 	$('.btn-tweet').hide()
 	$('.btn-force').on('click', ->
 		generateQuote()
-		if speaker == 'C-3PO'
-			$('.twitter').attr('href', 'https://twitter.com/intent/tweet?text=%23C3PO%20said,%20"' + said + '"%20%23StarWars%20https://goo.gl/MOxWg1')
-		else
-			$('.twitter').attr('href', 'https://twitter.com/intent/tweet?text=' + speaker + '%20said,%20"' + said + '"%20%23StarWars%20https://goo.gl/MOxWg1')
+		$('.twitter').attr('href', 'https://twitter.com/intent/tweet?text=' + speaker + '%20said,%20"' + said + '"%20%23StarWars%20https://goo.gl/MOxWg1')
 		$('.btn-tweet').show()
 	)

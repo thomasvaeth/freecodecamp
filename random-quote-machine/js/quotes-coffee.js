@@ -97,9 +97,7 @@
   generateQuote = function() {
     var randomQuote;
     randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-    if (randomQuote.character === "C-3PO" && randomQuote.quote.length + randomQuote.character.length > 95) {
-      return generateQuote();
-    } else if (randomQuote.quote.length + randomQuote.character.length > 97) {
+    if (randomQuote.quote.length + randomQuote.character.length > 97) {
       return generateQuote();
     } else {
       $('.quote').text(randomQuote.quote);
@@ -113,11 +111,7 @@
     $('.btn-tweet').hide();
     return $('.btn-force').on('click', function() {
       generateQuote();
-      if (speaker === 'C-3PO') {
-        $('.twitter').attr('href', 'https://twitter.com/intent/tweet?text=%23C3PO%20said,%20"' + said + '"%20%23StarWars%20https://goo.gl/MOxWg1');
-      } else {
-        $('.twitter').attr('href', 'https://twitter.com/intent/tweet?text=' + speaker + '%20said,%20"' + said + '"%20%23StarWars%20https://goo.gl/MOxWg1');
-      }
+      $('.twitter').attr('href', 'https://twitter.com/intent/tweet?text=' + speaker + '%20said,%20"' + said + '"%20%23StarWars%20https://goo.gl/MOxWg1');
       return $('.btn-tweet').show();
     });
   });
