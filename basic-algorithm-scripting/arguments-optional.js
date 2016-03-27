@@ -3,19 +3,13 @@
 function add() {
   var args = Array.prototype.slice.call(arguments);
   if (args.length !== 2) {
-    if (typeof args[0] !== 'number') {
-      return undefined;
-    }
+    if (typeof args[0] !== 'number') return undefined;
     return function(a) {
-      if (typeof a !== 'number') {
-        return undefined;
-      }
+      if (typeof a !== 'number') return undefined;
       return (a + args[0]);
     };
   } else {
-    if (typeof args[1] !== "number") {
-      return undefined;
-    }
+    if (typeof args[1] !== "number") return undefined;
     return args[0] + args[1];
   }
 }

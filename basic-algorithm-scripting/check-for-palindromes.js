@@ -3,11 +3,7 @@
 function palindrome(str) {
 	var noSpace = str.replace(/\W/g, '').toLowerCase();
 	var strReverse = noSpace.split('').reverse().join('');
-	if (noSpace === strReverse) {
-		return true;
-	} else {
-		return false;
-	}
+	return noSpace === strReverse ? true : false;
 }
 
 palindrome("eye");

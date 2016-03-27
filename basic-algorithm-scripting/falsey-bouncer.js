@@ -2,11 +2,7 @@
 function bouncer(arr) {
 	newArr = [];
 	for (var i = 0; i < arr.length; i++) {
-		if (arr[i] === false || arr[i] === null || arr[i] === 0 || arr[i] === '' || arr[i] === undefined) {
-
-		} else {
-			newArr.push(arr[i]);
-		}
+		if (arr[i]) newArr.push(arr[i]);
 	}
 	return newArr;
 }

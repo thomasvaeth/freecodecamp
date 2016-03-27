@@ -5,9 +5,7 @@ function sumFibs(num) {
   var k = 0;
   var sum = 2;
   while (k <= num ) {
-    if (k % 2 === 1) {
-      sum = sum + k;
-    }
+    if (k % 2 === 1) sum = sum + k;
     k = i + j;
     i = j;
     j = k;

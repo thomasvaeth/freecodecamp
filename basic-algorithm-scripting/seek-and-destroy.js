@@ -7,11 +7,7 @@ function destroyer(arr) {
   }
   function checkList (search) {
     for (var j = 0; j < destroy.length; j++) {
-      if (arr[search] === destroy[j]) {
-        return true;
-      } else {
-        return false;
-      }
+      return arr[search] === destroy[j] ? true : false;
     }
   }
   return arr.filter(checkList);
