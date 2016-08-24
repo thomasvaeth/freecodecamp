@@ -1,6 +1,6 @@
 // Repeat a given string (first argument) n times (second argument).
 // Return an empty string if n is a negative number.
-function repeat(str, num) {
+function repeatStringNumTimes(str, num) {
 	var combined = '';
 	if (num <= 0 ) {
 		return combined;
@@ -12,4 +12,4 @@ function repeat(str, num) {
 	}
 }
 
-repeat('abc', 3);
+repeatStringNumTimes('abc', 3);
