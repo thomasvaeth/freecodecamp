@@ -55,9 +55,7 @@ $(document).ready(function () {
   users.forEach(function(user) {
     $.get('https://api.twitch.tv/kraken/channels/' + user, function(callback) {
       if (callback.error !== "Not Found") {
-        if (callback.logo === null) {
-          callback.logo = 'images/no.png';
-        }
+        if (callback.logo === null) callback.logo = 'images/no.png';
         var link = 'http://twitch.tv/' + user;
         $.get('https://api.twitch.tv/kraken/streams/' + user, function(nextCallback) {
           if (nextCallback.stream === null) {

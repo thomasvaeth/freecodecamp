@@ -181,9 +181,7 @@ function checkForWin(moves){
     for (var j = 0; j < winningMoves[i].length; j++) {
       if (moves.indexOf(winningMoves[i][j]) > -1){
         inRow++;
-        if (inRow === 3) {
-        	return true
-        }
+        if (inRow === 3) return true;
       }
     }
   }
@@ -200,9 +198,7 @@ function clearBoard() {
 	arrX = [];
 	arrO = [];
 	gameboard = ['', '', '', '', '', '', '', '', ''];
-	if (computerSymbol === 'X') {
-		neverLose();
-	}
+	if (computerSymbol === 'X') neverLose();
 }
 
 function resetScores() {

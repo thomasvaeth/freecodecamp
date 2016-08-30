@@ -9,9 +9,7 @@ var clock = ':00';
 
 $('.add-task').on('click', function() {
   taskTimer++;
-  if (taskTimer > 0) {
-    $('.set-task, .subtract-task').removeAttr('disabled');
-  }
+  if (taskTimer > 0) $('.set-task, .subtract-task').removeAttr('disabled');
   if (taskTimer < 10) {
     $('.task').html('0' + taskTimer + clock)
   } else {
@@ -21,9 +19,7 @@ $('.add-task').on('click', function() {
 
 $('.subtract-task').on('click', function() {
   taskTimer--;
-  if (taskTimer === 0) {
-    $('.set-task, .subtract-task').attr('disabled', 'disabled');
-  }
+  if (taskTimer === 0) $('.set-task, .subtract-task').attr('disabled', 'disabled');
   if (taskTimer < 10) {
     $('.task').html('0' + taskTimer + clock)
   } else {
@@ -38,9 +34,7 @@ $('.set-task').on('click', function() {
 
 $('.add-break').on('click', function() {
   breakTimer++;
-  if (breakTimer > 0) {
-    $('.set-break, .subtract-break').removeAttr('disabled');
-  }
+  if (breakTimer > 0) $('.set-break, .subtract-break').removeAttr('disabled');
   if (breakTimer < 10) {
     $('.break').html('0' + breakTimer + clock)
   } else {
@@ -50,9 +44,7 @@ $('.add-break').on('click', function() {
 
 $('.subtract-break').on('click', function() {
   breakTimer--;
-  if (breakTimer === 0) {
-    $('.set-break, .subtract-break').attr('disabled', 'disabled')
-  }
+  if (breakTimer === 0) $('.set-break, .subtract-break').attr('disabled', 'disabled')
   if (breakTimer < 10) {
     $('.break').html('0' + breakTimer + clock)
   } else {
@@ -80,9 +72,7 @@ function sharedClock() {
   } else {
     $('.clock').html(minutesLeft + ':' + secondsLeft);
   }
-  if (minutesLeft <= 1 && secondsLeft === 0 || minutesLeft < 1) {
-    $('.clock, .information').css('color', 'red');
-  }
+  if (minutesLeft <= 1 && secondsLeft === 0 || minutesLeft < 1) $('.clock, .information').css('color', 'red');
 }
 
 function taskClock() {
