@@ -1,4 +1,5 @@
 // Create a function that sums two arguments together.
+// my changes
 // If only one argument is provided, return a function that expects one additional argument and will return the sum.
 function add() {
   var args = Array.prototype.slice.call(arguments);
